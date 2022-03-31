@@ -2,34 +2,33 @@ name: CI
 
 on:
   push:
-    branches: [ main ]
-    paths:   
+    branches: [main]
+    paths:
       - '*\.(jpg|jpeg|png)'
-      
+
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
-    - name: checkout actions
-    - uses: actions/checkout@v1
+      - name: checkout actions
+      - uses: actions/checkout@v1
 
-    - name: Setup Node.js environment
-      uses: actions/setup-node@v3.0.0
-		
-#     - name: Update URL.md
-#       run: |
-#         node scripts/update-url-doc.js
-		
-    - name: Commit
-      run: |
-        git config --global user.email 383810086@qq.com
-        git config --global user.name lecepin
-        git add .
-        git commit -m "update url doc" -a
-		
-    - name: Push
-      uses: ad-m/github-push-action@master
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v3.0.0
+
+      #     - name: Update URL.md
+      #       run: |
+      #         node scripts/update-url-doc.js
+
+      - name: Commit
+        run: |
+          git config --global user.email 383810086@qq.com
+          git config --global user.name lecepin
+          git add .
+          git commit -m "update url doc" -a
+
+      - name: Push
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
