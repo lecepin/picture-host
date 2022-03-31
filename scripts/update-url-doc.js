@@ -21,6 +21,6 @@ glob(
       content += `\n - [https://cdn.jsdelivr.net/gh/lecepin/picture-host/${item}](https://cdn.jsdelivr.net/gh/lecepin/picture-host/${item})`;
     });
 
-    fs.writeFile(path.resolve(__dirname, "../URL.md"), content);
+    fs.writeFileSync(path.resolve(__dirname, "../URL.md"), content);
   }
 );
