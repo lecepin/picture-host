@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
     paths:
-      - 'images/**'
+      - "images/**"
 
 jobs:
   build:
@@ -17,10 +17,10 @@ jobs:
       - name: Setup Node.js environment
         uses: actions/setup-node@v3.0.0
 
-          - name: Update URL.md
-            run: |
-              npm install
-              node scripts/update-url-doc.js
+      - name: Update URL
+        run: |
+          npm install
+          node scripts/update-url-doc.js
 
       - name: Commit
         run: |
