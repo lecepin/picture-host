@@ -8,7 +8,7 @@ glob(
     nodir: true,
   },
   (er, files) => {
-    let content = "# URL\n";
+    let content = "# Pictrue-Host Image URL\n";
 
     content += "\n ## From Github";
 
@@ -21,6 +21,6 @@ glob(
       content += `\n - [https://cdn.jsdelivr.net/gh/lecepin/picture-host/${item}](https://cdn.jsdelivr.net/gh/lecepin/picture-host/${item})`;
     });
 
-    fs.writeFileSync(path.resolve(__dirname, "../URL.md"), content);
+    fs.writeFile(path.resolve(__dirname, "../URL.md"), content);
   }
 );
