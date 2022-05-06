@@ -21,6 +21,11 @@ glob(
       content += `\n - [https://cdn.jsdelivr.net/gh/lecepin/picture-host/${item}](https://cdn.jsdelivr.net/gh/lecepin/picture-host/${item})`;
     });
 
+    content += "\n ## From 91CH 加速";
+    files.map((item) => {
+      content += `\n - [${item}](https://github.91chi.fun/https://raw.githubusercontent.com/lecepin/picture-host/main/${item})`;
+    });
+
     fs.writeFileSync(path.resolve(__dirname, "../URL.md"), content);
   }
 );
