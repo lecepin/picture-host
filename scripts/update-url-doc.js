@@ -25,7 +25,12 @@ glob(
     files.map((item) => {
       content += `\n - [${item}](https://github.91chi.fun/https://raw.githubusercontent.com/lecepin/picture-host/main/${item})`;
     });
-
+    
+    content += "\n ## Preview";
+    files.map((item) => {
+      content += `\n <img src="https://github.91chi.fun/https://raw.githubusercontent.com/lecepin/picture-host/main/${item}" width="200" />`;
+    });
+    
     fs.writeFileSync(path.resolve(__dirname, "../URL.md"), content);
   }
 );
